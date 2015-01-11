@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="qiudushu : konwledge">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>qiudushu</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/qiuzhihua/qiiudushu">View on GitHub</a>
+
+          <h1 id="project_title">qiudushu</h1>
+          <h2 id="project_tagline">konwledge</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/qiuzhihua/qiiudushu/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/qiuzhihua/qiiudushu/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>static UILabel *lable;</p>
+
+<p><a href="https://github.com/implementation" class="user-mention">@implementation</a> lableTextHeight</p>
+
+<ul>
+<li>
+<p>(void)initialize
+{
+if(self == [lableTextHeight class]){
+    //专门计算微博内容高度的方法
+    NSInteger defaultWidth = [[UIScreen mainScreen] bounds].size.width -16;
+    lable = [[UILabel alloc] init];
+    lable.lineBreakMode = NSLineBreakByTruncatingTail;
+    lable.numberOfLines = 0;
+    lable.translatesAutoresizingMaskIntoConstraints = NO;</p>
+
+<pre><code>NSLayoutConstraint  *constraint = [NSLayoutConstraint constraintWithItem:lable attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:defaultWidth];
+[lable addConstraint:constraint];
+</code></pre>
+
+<p>}
+}</p>
+</li>
+</ul>
+
+<p>+(CGFloat)textHeightWith:(NSString *)string FontSize:(NSInteger)fontSize width:(float)width
+{
+    lable.font = [UIFont systemFontOfSize:fontSize];
+    NSArray *constraints;
+    if (width != 0 &amp;&amp; lable.bounds.size.width != width) {
+        constraints  = lable.constraints;//约束
+        [lable removeConstraints:lable.constraints];</p>
+
+<pre><code>    NSLayoutConstraint *contraint = [NSLayoutConstraint constraintWithItem:lable attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:width];
+
+    [lable addConstraint:contraint];
+}
+lable.text = string;
+
+CGSize size = [lable systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+if (constraints) {
+    [lable removeConstraints:lable.constraints];
+    [lable addConstraints:constraints];
+}
+return size.height;
+</code></pre>
+
+<p>}</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">qiudushu maintained by <a href="https://github.com/qiuzhihua">qiuzhihua</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
